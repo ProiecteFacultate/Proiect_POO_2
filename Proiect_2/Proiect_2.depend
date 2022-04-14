@@ -1,0 +1,24 @@
+# depslib dependency file v1.0
+1649976224 source:d:\facultate\poo\proiect2_gitrep\proiect_2\main.cpp
+	<iostream>
+	"Produs.h"
+	"FelPrincipal.h"
+
+1649976218 d:\facultate\poo\proiect2_gitrep\proiect_2\include\produs.h
+	<iostream>
+
+1649976218 source:d:\facultate\poo\proiect2_gitrep\proiect_2\src\produs.cpp
+	"Produs.h"
+	<iostream>
+
+1649965357 source:d:\facultate\poo\proiect2_gitrep\proiect_2\src\mancarenormala.cpp
+	"MancareNormala.h"
+
+1649965395 d:\facultate\poo\proiect2_gitrep\proiect_2\include\mancarenormala.h
+
+1649975160 source:d:\facultate\poo\proiect2_gitrep\proiect_2\src\felprincipal.cpp
+	"FelPrincipal.h"
+
+1649976218 d:\facultate\poo\proiect2_gitrep\proiect_2\include\felprincipal.h
+	"Produs.h"
+
