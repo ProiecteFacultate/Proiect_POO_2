@@ -53,9 +53,9 @@ Produs* PreparateDePost::getParentClass()
 
 void PreparateDePost::afiseazaProdus()
 {
-    if(esteDinSoia == "TRUE")
+    if(this->esteDinSoia == "TRUE")
         cout<<"Preparatul de post "<<nume<<" ESTE din soia si costa "<<pret<<" lei!"<<endl;
-    else if(esteDinSoia == "FALSE")
+    else if(this->esteDinSoia == "FALSE")
         cout<<"Preparatul de post "<<nume<<" NU ESTE din soia si costa "<<pret<<" lei!"<<endl;
 }
 

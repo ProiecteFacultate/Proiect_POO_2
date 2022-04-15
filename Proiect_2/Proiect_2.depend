@@ -1,14 +1,15 @@
 # depslib dependency file v1.0
-1650022516 source:d:\facultate\poo\proiect2_gitrep\proiect_2\main.cpp
+1650035244 source:d:\facultate\poo\proiect2_gitrep\proiect_2\main.cpp
 	<iostream>
 	"Produs.h"
 	"FelPrincipal.h"
 	"PreparateDePost.h"
+	"PreparateNormale.h"
 
 1650018797 d:\facultate\poo\proiect2_gitrep\proiect_2\include\produs.h
 	<iostream>
 
-1650018571 source:d:\facultate\poo\proiect2_gitrep\proiect_2\src\produs.cpp
+1650035595 source:d:\facultate\poo\proiect2_gitrep\proiect_2\src\produs.cpp
 	"Produs.h"
 	<iostream>
 
@@ -24,9 +25,16 @@
 1650020110 d:\facultate\poo\proiect2_gitrep\proiect_2\include\felprincipal.h
 	"Produs.h"
 
-1650022586 source:d:\facultate\poo\proiect2_gitrep\proiect_2\src\preparatedepost.cpp
+1650033245 source:d:\facultate\poo\proiect2_gitrep\proiect_2\src\preparatedepost.cpp
 	"PreparateDePost.h"
 
 1650022516 d:\facultate\poo\proiect2_gitrep\proiect_2\include\preparatedepost.h
 	"Produs.h"
+
+1650035772 source:d:\facultate\poo\proiect2_gitrep\proiect_2\src\preparatenormale.cpp
+	"PreparateNormale.h"
+
+1650033317 d:\facultate\poo\proiect2_gitrep\proiect_2\include\preparatenormale.h
+	"Produs.h"
+	<vector>
 

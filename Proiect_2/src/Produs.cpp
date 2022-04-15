@@ -58,12 +58,12 @@ void Produs::afiseazaTipulProdusului()
 istream& operator>>(istream& in, Produs& obj)
 {
     cout<<"Introduceti nume produs: ";
-    in>>obj.nume;
+    getline(in, obj.nume);
 
     cout<<"Introduceti pret produs: ";
     in>>obj.pret;
 
-    cout<<"Introduceti calorii produs: ";
+    cout<<"Introduceti calorii produs (un int): ";
     in>>obj.calorii;
 
     cout<<"Introduceti zi expirare produs: ";
