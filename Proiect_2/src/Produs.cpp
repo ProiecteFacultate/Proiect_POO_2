@@ -43,6 +43,18 @@ Produs::~Produs()
     cout<<"Destroyed ~Produs"<<endl;
 }
 
+void Produs::afiseazaProdus()
+{
+    cout<<"Produsul "<<nume<<" costa "<<pret<<endl;
+}
+
+void Produs::afiseazaTipulProdusului()
+{
+    cout<<"Nu se cunoaste tipul produsului!"<<endl;
+}
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
 istream& operator>>(istream& in, Produs& obj)
 {
     cout<<"Introduceti nume produs: ";

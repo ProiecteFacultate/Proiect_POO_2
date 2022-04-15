@@ -21,6 +21,9 @@ public:
 
     friend std::istream& operator>>(std::istream&, Produs&);
     friend std::ostream& operator<<(std::ostream&, Produs&);
+
+    virtual void afiseazaProdus();  //varianta in care afiseaza doar numele si pretul
+    static void afiseazaTipulProdusului();
 };
 
 #endif // PRODUS_H
