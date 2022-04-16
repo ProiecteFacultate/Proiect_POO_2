@@ -71,7 +71,12 @@ void PreparateNormale::setParentClass()
 
 Produs* PreparateNormale::getParentClass()
 {
-    return parentClass;
+    return this->parentClass;
+}
+
+void PreparateNormale::afiseazaTipulProdusului()
+{
+    cout<<"Acest produs este preparat normal!"<<endl;
 }
 
 void PreparateNormale::afiseazaProdus()

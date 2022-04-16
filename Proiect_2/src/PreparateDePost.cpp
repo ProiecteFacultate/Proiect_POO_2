@@ -48,7 +48,7 @@ void PreparateDePost::setParentClass()
 
 Produs* PreparateDePost::getParentClass()
 {
-    return parentClass;
+    return this->parentClass;
 }
 
 void PreparateDePost::afiseazaProdus()
@@ -57,6 +57,11 @@ void PreparateDePost::afiseazaProdus()
         cout<<"Preparatul de post "<<nume<<" ESTE din soia si costa "<<pret<<" lei!"<<endl;
     else if(this->esteDinSoia == "FALSE")
         cout<<"Preparatul de post "<<nume<<" NU ESTE din soia si costa "<<pret<<" lei!"<<endl;
+}
+
+void PreparateDePost::afiseazaTipulProdusului()
+{
+    cout<<"Acest produs este preparat de post!"<<endl;
 }
 
 void PreparateDePost::esteProdusVegan() const

@@ -4,7 +4,7 @@
 #include <vector>
 
 
-class PreparateNormale: public Produs
+class PreparateNormale: virtual public Produs
 {
    private:
     std::string felDeMancare;  //Garnitura/Friptura/Aperitiv
@@ -27,6 +27,8 @@ public:
 
     void setParentClass();
     Produs* getParentClass();
+
+    void afiseazaTipulProdusului();
 
 };
 

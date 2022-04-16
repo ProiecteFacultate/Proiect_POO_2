@@ -1,9 +1,10 @@
 #include "FelPrincipal.h"
 #include "Produs.h"
+#include "MyExceptions.h"
 
 using namespace std;
 
-FelPrincipal::FelPrincipal(int thisCod):Produs(),cod(thisCod)
+FelPrincipal::FelPrincipal():Produs(),cod(0)
 {
     setParentClass();
 }
@@ -64,6 +65,9 @@ void FelPrincipal::setCodFelPrincipal(int x)
 
 int FelPrincipal::getCodFelPrincipal()
 {
+    if(FelPrincipal::codFelPrincipal <= 0)
+        throw FelPrincipal::codFelPrincipal;
+
     return FelPrincipal::codFelPrincipal;
 }
 
@@ -80,17 +84,33 @@ int FelPrincipal::getCod() const
 
 istream& operator>>(istream& in, FelPrincipal& obj)
 {
-    in>>*obj.getParentClass();
+    try
+    {
+        in>>*obj.getParentClass();   //throw poate veni de aici
 
-    cout<<"Precizati daca este supa crema [TRUE/FALSE]: ";
-    in>>obj.isSupaCrema;
+        string val;
+        cout<<"Precizati daca este supa crema [TRUE/FALSE]: ";
+        in.clear();
+        in.sync();
+        getline(in, val);
+        MyExceptions::boolValueException(val);
+        obj.isSupaCrema = val;
 
-    cout<<"Precizati daca contine legume [TRUE/FALSE]: ";
-    in>>obj.contineLegume;
+        cout<<"Precizati daca contine legume [TRUE/FALSE]: ";
+        in.clear();
+        in.sync();
+        getline(in, val);
+        MyExceptions::boolValueException(val);
+        obj.contineLegume = val;
 
-    cout<<endl;
+        cout<<endl;
 
-    return in;
+        return in;
+    }
+    catch(MyExceptions e)
+    {
+        throw;
+    }
 }
 
 ostream& operator<<(ostream& out, FelPrincipal& obj)

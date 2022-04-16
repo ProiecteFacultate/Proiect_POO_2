@@ -1,16 +1,21 @@
 # depslib dependency file v1.0
-1650035244 source:d:\facultate\poo\proiect2_gitrep\proiect_2\main.cpp
+1650122045 source:d:\facultate\poo\proiect2_gitrep\proiect_2\main.cpp
 	<iostream>
+	<vector>
+	<string>
 	"Produs.h"
 	"FelPrincipal.h"
 	"PreparateDePost.h"
 	"PreparateNormale.h"
+	"PreparateDePeste.h"
+	"MyExceptions.h"
 
-1650018797 d:\facultate\poo\proiect2_gitrep\proiect_2\include\produs.h
+1650121394 d:\facultate\poo\proiect2_gitrep\proiect_2\include\produs.h
 	<iostream>
 
-1650035595 source:d:\facultate\poo\proiect2_gitrep\proiect_2\src\produs.cpp
+1650121394 source:d:\facultate\poo\proiect2_gitrep\proiect_2\src\produs.cpp
 	"Produs.h"
+	"MyExceptions.h"
 	<iostream>
 
 1649965357 source:d:\facultate\poo\proiect2_gitrep\proiect_2\src\mancarenormala.cpp
@@ -18,23 +23,42 @@
 
 1649965395 d:\facultate\poo\proiect2_gitrep\proiect_2\include\mancarenormala.h
 
-1650022586 source:d:\facultate\poo\proiect2_gitrep\proiect_2\src\felprincipal.cpp
+1650121151 source:d:\facultate\poo\proiect2_gitrep\proiect_2\src\felprincipal.cpp
 	"FelPrincipal.h"
 	"Produs.h"
+	"MyExceptions.h"
 
-1650020110 d:\facultate\poo\proiect2_gitrep\proiect_2\include\felprincipal.h
+1650121151 d:\facultate\poo\proiect2_gitrep\proiect_2\include\felprincipal.h
 	"Produs.h"
 
-1650033245 source:d:\facultate\poo\proiect2_gitrep\proiect_2\src\preparatedepost.cpp
+1650108351 source:d:\facultate\poo\proiect2_gitrep\proiect_2\src\preparatedepost.cpp
 	"PreparateDePost.h"
 
-1650022516 d:\facultate\poo\proiect2_gitrep\proiect_2\include\preparatedepost.h
+1650108351 d:\facultate\poo\proiect2_gitrep\proiect_2\include\preparatedepost.h
 	"Produs.h"
 
-1650035772 source:d:\facultate\poo\proiect2_gitrep\proiect_2\src\preparatenormale.cpp
+1650108351 source:d:\facultate\poo\proiect2_gitrep\proiect_2\src\preparatenormale.cpp
 	"PreparateNormale.h"
 
-1650033317 d:\facultate\poo\proiect2_gitrep\proiect_2\include\preparatenormale.h
+1650108351 d:\facultate\poo\proiect2_gitrep\proiect_2\include\preparatenormale.h
 	"Produs.h"
 	<vector>
+
+1650108462 source:d:\facultate\poo\proiect2_gitrep\proiect_2\src\preparatedepeste.cpp
+	"PreparateDePeste.h"
+	"Produs.h"
+	"PreparateDePost.h"
+	"PreparateNormale.h"
+
+1650108462 d:\facultate\poo\proiect2_gitrep\proiect_2\include\preparatedepeste.h
+	"Produs.h"
+	"PreparateDePost.h"
+	"PreparateNormale.h"
+
+1650122019 d:\facultate\poo\proiect2_gitrep\proiect_2\include\myexceptions.h
+	<iostream>
+
+1650122003 source:d:\facultate\poo\proiect2_gitrep\proiect_2\src\myexceptions.cpp
+	"MyExceptions.h"
+	<string>
 

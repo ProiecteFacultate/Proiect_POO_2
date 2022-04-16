@@ -3,10 +3,13 @@
 #include "Produs.h"
 
 
-class PreparateDePost: public Produs
+class PreparateDePost: virtual public Produs
 {
-private:
+
+protected:
     std::string esteDinSoia;  //TRUE or FALSE
+
+private:
     std::string contineOua;
     std::string contineLapte;
 
@@ -26,6 +29,8 @@ public:
 
     void setParentClass();
     Produs* getParentClass();
+
+    void afiseazaTipulProdusului();
 
     void esteProdusVegan() const;
 };

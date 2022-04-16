@@ -23,7 +23,8 @@ public:
     friend std::ostream& operator<<(std::ostream&, Produs&);
 
     virtual void afiseazaProdus();  //varianta in care afiseaza doar numele si pretul
-    static void afiseazaTipulProdusului();
+    virtual void afiseazaTipulProdusului()=0;
+
 };
 
 #endif // PRODUS_H

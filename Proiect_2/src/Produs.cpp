@@ -1,4 +1,5 @@
 #include "Produs.h"
+#include "MyExceptions.h"
 #include <iostream>
 
 using namespace std;
@@ -48,36 +49,67 @@ void Produs::afiseazaProdus()
     cout<<"Produsul "<<nume<<" costa "<<pret<<endl;
 }
 
-void Produs::afiseazaTipulProdusului()
-{
-    cout<<"Nu se cunoaste tipul produsului!"<<endl;
-}
-
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 istream& operator>>(istream& in, Produs& obj)
 {
-    cout<<"Introduceti nume produs: ";
-    getline(in, obj.nume);
+    try
+    {
+        string val;
 
-    cout<<"Introduceti pret produs: ";
-    in>>obj.pret;
+        cout<<"Introduceti nume produs: ";
+        in.clear();
+        in.sync();
+        getline(in, obj.nume);
 
-    cout<<"Introduceti calorii produs (un int): ";
-    in>>obj.calorii;
+        cout<<"Introduceti pret produs: ";
+        in.clear();
+        in.sync();
+        getline(in, val);
+        MyExceptions::badTypeIntegerException(val);
+        MyExceptions::negativeValueException(stoi(val));
+        obj.pret = stoi(val);
 
-    cout<<"Introduceti zi expirare produs: ";
-    in>>obj.ziExpirare;
+        cout<<"Introduceti calorii produs (un int): ";
+        in.clear();
+        in.sync();
+        getline(in, val);
+        MyExceptions::badTypeIntegerException(val);
+        MyExceptions::negativeValueException(stoi(val));
+        obj.calorii = stoi(val);
 
-    cout<<"Introduceti luna expirare produs: ";
-    in>>obj.lunaExpirare;
+        cout<<"Introduceti zi expirare produs: ";
+        in.clear();
+        in.sync();
+        getline(in, val);
+        MyExceptions::badTypeIntegerException(val);
+        MyExceptions::negativeValueException(stoi(val));
+        obj.ziExpirare = stoi(val);
 
-    cout<<"Introduceti an expirare produs: ";
-    in>>obj.anExpirare;
+        cout<<"Introduceti luna expirare produs: ";
+        in.clear();
+        in.sync();
+        getline(in, val);
+        MyExceptions::badTypeIntegerException(val);
+        MyExceptions::negativeValueException(stoi(val));
+        obj.lunaExpirare = stoi(val);
 
-    cout<<endl;
+        cout<<"Introduceti an expirare produs: ";
+        in.clear();
+        in.sync();
+        getline(in, val);
+        MyExceptions::badTypeIntegerException(val);
+        MyExceptions::negativeValueException(stoi(val));
+        obj.anExpirare = stoi(val);
 
-    return in;
+        cout<<endl;
+        return in;
+    }
+    catch (MyExceptions e)
+    {
+        throw;
+    }
+
 }
 
 ostream& operator<<(ostream& out, Produs& obj)

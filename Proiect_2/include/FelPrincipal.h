@@ -13,7 +13,7 @@ private:
 
 public:
 
-    FelPrincipal(int);
+    FelPrincipal();
     FelPrincipal(int, std::string, std::string, std::string, int, int, int, int, int);
     FelPrincipal(const FelPrincipal&);
     FelPrincipal& operator=(FelPrincipal&);
@@ -28,7 +28,7 @@ public:
     Produs* getParentClass();
     static void setCodFelPrincipal(int);
     static int getCodFelPrincipal();
-    static void afiseazaTipulProdusului();
+    void afiseazaTipulProdusului();
     int getCod() const;
 };
 
