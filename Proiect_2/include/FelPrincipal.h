@@ -6,7 +6,6 @@ class FelPrincipal: public Produs
 {
 private:
     static int codFelPrincipal;         //toate felurile princ au acelasi cod
-    const int cod;    //fiecare fel principal are un cod care e constant
     std::string isSupaCrema;
     std::string contineLegume;
     Produs *parentClass;
@@ -14,7 +13,7 @@ private:
 public:
 
     FelPrincipal();
-    FelPrincipal(int, std::string, std::string, std::string, int, int, int, int, int);
+    FelPrincipal(std::string, std::string, std::string, int, int, int, int, int);
     FelPrincipal(const FelPrincipal&);
     FelPrincipal& operator=(FelPrincipal&);
     ~FelPrincipal();
@@ -29,7 +28,6 @@ public:
     static void setCodFelPrincipal(int);
     static int getCodFelPrincipal();
     void afiseazaTipulProdusului();
-    int getCod() const;
 };
 
 #endif // FELPRINCIPAL_H

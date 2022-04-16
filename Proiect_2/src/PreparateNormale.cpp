@@ -1,4 +1,5 @@
 #include "PreparateNormale.h"
+#include "MyExceptions.h"
 
 using namespace std;
 
@@ -88,28 +89,53 @@ void PreparateNormale::afiseazaProdus()
 
 istream& operator>>(istream& in, PreparateNormale& obj)
 {
-    in>>*obj.getParentClass();
-
-    cout<<"Precizati tipul preparatului [Garnitura/Friptura/Aperitiv]: ";
-    in>>obj.felDeMancare;
-
-    cout<<"Precizati numarul de ingrediente (apoi va trebui sa introduceti numele fiecarui ingredient): ";
-    in>>obj.nrIngrediente;
-
-    if(obj.ingrediente != nullptr)
-        delete[] obj.ingrediente;
-
-    obj.ingrediente = new string[obj.nrIngrediente];
-
-    for(int i = 0; i < obj.nrIngrediente; i++)
+    try
     {
-        cout<<"Ingredientul numarul "<<i + 1<<" (un cuvant): ";
-        in>>obj.ingrediente[i];
+        in>>*obj.getParentClass();     //poate veni exceptie de aici
+        string val;
+        vector<string> acceptedValuesString;
+        acceptedValuesString.resize(3);
+        acceptedValuesString[0] = "GARNITURA";
+        acceptedValuesString[1] = "FRIPTURA";
+        acceptedValuesString[2] = "APERITIV";
+
+        cout<<"Precizati tipul preparatului [Garnitura/Friptura/Aperitiv]: ";
+        in.clear();
+        in.sync();
+        getline(in, val);
+        MyExceptions::acceptedInputException(val, acceptedValuesString, 3);
+        obj.felDeMancare = val;
+
+        cout<<"Precizati numarul de ingrediente (apoi va trebui sa introduceti numele fiecarui ingredient): ";
+        in.clear();
+        in.sync();
+        getline(in, val);
+        MyExceptions::badTypeIntegerException(val);
+        MyExceptions::negativeValueException(stoi(val));
+        obj.nrIngrediente = stoi(val);
+
+        if(obj.ingrediente != nullptr)
+            delete[] obj.ingrediente;
+
+        obj.ingrediente = new string[obj.nrIngrediente];
+
+
+        for(int i = 0; i < obj.nrIngrediente; i++)
+        {
+            cout<<"Ingredientul numarul "<<i + 1<<": ";
+            in.clear();
+            in.sync();
+            getline(in, obj.ingrediente[i]);
+        }
+
+        cout<<endl;
+
+        return in;
     }
-
-    cout<<endl;
-
-    return in;
+    catch(MyExceptions e)
+    {
+        throw;
+    }
 }
 
 ostream& operator<<(ostream& out, PreparateNormale& obj)

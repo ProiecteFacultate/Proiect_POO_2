@@ -1,8 +1,10 @@
 # depslib dependency file v1.0
-1650122045 source:d:\facultate\poo\proiect2_gitrep\proiect_2\main.cpp
+1650138770 source:d:\facultate\poo\proiect2_gitrep\proiect_2\main.cpp
 	<iostream>
 	<vector>
 	<string>
+	<windows.h>
+	<stdio.h>
 	"Produs.h"
 	"FelPrincipal.h"
 	"PreparateDePost.h"
@@ -23,12 +25,12 @@
 
 1649965395 d:\facultate\poo\proiect2_gitrep\proiect_2\include\mancarenormala.h
 
-1650121151 source:d:\facultate\poo\proiect2_gitrep\proiect_2\src\felprincipal.cpp
+1650136237 source:d:\facultate\poo\proiect2_gitrep\proiect_2\src\felprincipal.cpp
 	"FelPrincipal.h"
 	"Produs.h"
 	"MyExceptions.h"
 
-1650121151 d:\facultate\poo\proiect2_gitrep\proiect_2\include\felprincipal.h
+1650131076 d:\facultate\poo\proiect2_gitrep\proiect_2\include\felprincipal.h
 	"Produs.h"
 
 1650108351 source:d:\facultate\poo\proiect2_gitrep\proiect_2\src\preparatedepost.cpp
@@ -37,8 +39,9 @@
 1650108351 d:\facultate\poo\proiect2_gitrep\proiect_2\include\preparatedepost.h
 	"Produs.h"
 
-1650108351 source:d:\facultate\poo\proiect2_gitrep\proiect_2\src\preparatenormale.cpp
+1650136703 source:d:\facultate\poo\proiect2_gitrep\proiect_2\src\preparatenormale.cpp
 	"PreparateNormale.h"
+	"MyExceptions.h"
 
 1650108351 d:\facultate\poo\proiect2_gitrep\proiect_2\include\preparatenormale.h
 	"Produs.h"
@@ -55,10 +58,13 @@
 	"PreparateDePost.h"
 	"PreparateNormale.h"
 
-1650122019 d:\facultate\poo\proiect2_gitrep\proiect_2\include\myexceptions.h
+1650138770 d:\facultate\poo\proiect2_gitrep\proiect_2\include\myexceptions.h
 	<iostream>
+	<string>
+	<vector>
 
-1650122003 source:d:\facultate\poo\proiect2_gitrep\proiect_2\src\myexceptions.cpp
+1650138008 source:d:\facultate\poo\proiect2_gitrep\proiect_2\src\myexceptions.cpp
 	"MyExceptions.h"
 	<string>
+	<vector>
 

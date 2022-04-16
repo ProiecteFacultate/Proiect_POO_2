@@ -1,5 +1,6 @@
 #include "MyExceptions.h"
 #include <string>
+#include <vector>
 
 using namespace std;
 
@@ -44,22 +45,69 @@ void MyExceptions::negativeValueException(int input)
     }
 }
 
-void MyExceptions::boolValueException(string input)
+void MyExceptions::acceptedInputException(string input, vector<string> expectedValues, int numOfExpectedValues)
 {
     for(int i = 0; i < input.size(); i++)
         input[i] = toupper(input[i]);
 
-    if(!(input == "TRUE" || input == "FALSE"))
+    bool inExpectedValues = false;
+
+    for(int i = 0; i < numOfExpectedValues; i++)
+        for(int j = 0; j < expectedValues[i].size(); j++)
+            expectedValues[i][j] = toupper(expectedValues[i][j]);
+
+    for(int i = 0; i < numOfExpectedValues; i++)
     {
-        MyExceptions e("UNACCEPTED VALUE EXCEPTION", "Expected [TRUE/FALSE]", input);
+        bool sameWord = true;
+
+        for(int j = 0; j < expectedValues[i].size(); j++)
+            if(expectedValues[i][j] != input[j])
+            {
+                sameWord = false;
+                break;
+            }
+
+        if(sameWord == true)
+        {
+            inExpectedValues = true;
+            break;
+        }
+    }
+
+    if(inExpectedValues == false)
+    {
+        string expectedValuesString = expectedValues[0];
+        for(int i = 1; i < numOfExpectedValues; i++)
+            expectedValuesString = expectedValuesString + "/" + expectedValues[i];
+
+        MyExceptions e("UNACCEPTED VALUE EXCEPTION", "Expected [" + expectedValuesString + "]", input);
         throw e;
     }
 
+}
+
+void MyExceptions::outOfBoundsException(int position, int vectorLength,int startIndex)
+{
+    if(position < 0)
+    {
+        MyExceptions e("OUT OF BOUNDS EXCEPTION", "Vector does not have negative indexes", to_string(position));
+        throw e;
+    }
+    else if(position <startIndex)
+    {
+        MyExceptions e("OUT OF BOUNDS EXCEPTION", "Introduced index is smaller the start Index of the vector", to_string(position));
+        throw e;
+    }
+    else if(position > startIndex + vectorLength - 1)
+    {
+        MyExceptions e("OUT OF BOUNDS EXCEPTION", "Introduced index is greater than the length of the vector", to_string(position));
+        throw e;
+    }
 }
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 string MyExceptions::getException()
 {
-    return this->exceptionType + ": " + this->message + ": " + this->value;
+    return this->exceptionType + ": " + this->message + "; Your value: " + this->value;
 }

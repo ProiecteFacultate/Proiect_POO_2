@@ -4,19 +4,19 @@
 
 using namespace std;
 
-FelPrincipal::FelPrincipal():Produs(),cod(0)
+FelPrincipal::FelPrincipal():Produs()
 {
     setParentClass();
 }
 
-FelPrincipal::FelPrincipal(int thisCod, string isSupaCrema, string contineLegume, string nume, int pret, int calorii, int ziExpirare, int lunaExpirare, int anExpirare):Produs(nume, pret, calorii, ziExpirare, lunaExpirare, anExpirare),cod(thisCod)
+FelPrincipal::FelPrincipal(string isSupaCrema, string contineLegume, string nume, int pret, int calorii, int ziExpirare, int lunaExpirare, int anExpirare):Produs(nume, pret, calorii, ziExpirare, lunaExpirare, anExpirare)
 {
     setParentClass();
     this->isSupaCrema = isSupaCrema;
     this->contineLegume = contineLegume;
 }
 
-FelPrincipal::FelPrincipal(const FelPrincipal& obj):Produs(obj),cod(obj.cod)
+FelPrincipal::FelPrincipal(const FelPrincipal& obj):Produs(obj)
 {
     setParentClass();
     this->isSupaCrema = obj.isSupaCrema;
@@ -75,11 +75,6 @@ void FelPrincipal::afiseazaTipulProdusului()
 {
     cout<<"Acest produs este fel principal!"<<endl;
 }
-
-int FelPrincipal::getCod() const
-{
-    return this->cod;
-}
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 istream& operator>>(istream& in, FelPrincipal& obj)
@@ -89,18 +84,23 @@ istream& operator>>(istream& in, FelPrincipal& obj)
         in>>*obj.getParentClass();   //throw poate veni de aici
 
         string val;
+        vector<string> acceptedValuesString;
+        acceptedValuesString.resize(2);
+        acceptedValuesString[0] = "TRUE";
+        acceptedValuesString[1] = "FALSE";
+
         cout<<"Precizati daca este supa crema [TRUE/FALSE]: ";
         in.clear();
         in.sync();
         getline(in, val);
-        MyExceptions::boolValueException(val);
+        MyExceptions::acceptedInputException(val, acceptedValuesString, 2);
         obj.isSupaCrema = val;
 
         cout<<"Precizati daca contine legume [TRUE/FALSE]: ";
         in.clear();
         in.sync();
         getline(in, val);
-        MyExceptions::boolValueException(val);
+        MyExceptions::acceptedInputException(val, acceptedValuesString, 2);
         obj.contineLegume = val;
 
         cout<<endl;
@@ -117,7 +117,6 @@ ostream& operator<<(ostream& out, FelPrincipal& obj)
 {
     out<<*obj.getParentClass();
 
-    out<<"Cod: "<<obj.cod<<endl;
     out<<"Este supa crema: "<<obj.isSupaCrema<<endl;
     out<<"Contine legume: "<<obj.contineLegume<<endl;
     out<<endl;
