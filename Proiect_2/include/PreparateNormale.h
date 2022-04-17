@@ -6,9 +6,11 @@
 
 class PreparateNormale: virtual public Produs
 {
-   private:
+protected:
+     int nrIngrediente;
+
+private:
     std::string felDeMancare;  //Garnitura/Friptura/Aperitiv
-    int nrIngrediente;
     std::string *ingrediente;
 
     Produs *parentClass;

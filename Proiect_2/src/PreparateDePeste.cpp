@@ -13,8 +13,9 @@ PreparateDePeste::PreparateDePeste()
 }
 
 PreparateDePeste::PreparateDePeste(string speciePeste, string contineOase, std::string felDeMancare, int nrIngrediente, string esteDinSoia, string contineOua, string contineLapte,
-                                   string nume, int pret, int calorii, int ziExpirare, int lunaExpirare, int anExpirare):PreparateNormale(felDeMancare, nrIngrediente, nume, pret, calorii,
-                                               ziExpirare, lunaExpirare, anExpirare), PreparateDePost(esteDinSoia, contineOua, contineLapte, nume, pret, calorii, ziExpirare, lunaExpirare, anExpirare)
+                                    string nume, int pret, int calorii, int ziExpirare, int lunaExpirare, int anExpirare):Produs(nume, pret, calorii, ziExpirare, lunaExpirare, anExpirare),
+                                     PreparateNormale(felDeMancare, nrIngrediente, nume, pret, calorii, ziExpirare, lunaExpirare, anExpirare),
+                                      PreparateDePost(esteDinSoia, contineOua, contineLapte, nume, pret, calorii, ziExpirare, lunaExpirare, anExpirare)
 {
     setParentClass();
     this->speciePeste = speciePeste;
@@ -79,9 +80,9 @@ void PreparateDePeste::afiseazaTipulProdusului()
 void PreparateDePeste::afiseazaProdus()
 {
     if(this->contineOase == "TRUE")
-        cout<<"Acest produs este "<<this->speciePeste<<" care contine oase si costa "<<this->pret<<" lei!"<<endl;
+        cout<<"Acest produs este "<<this->speciePeste<<" care contine oase, are "<<this->nrIngrediente<<" ingrediente si costa "<<this->pret<<" lei!"<<endl;
     else
-        cout<<"Acest produs este "<<this->speciePeste<<" care NU contine oase si costa "<<this->pret<<" lei!"<<endl;
+        cout<<"Acest produs este "<<this->speciePeste<<" care NU contine oase, are "<<this->nrIngrediente<<" ingrediente si costa "<<this->pret<<" lei!"<<endl;
 }
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////

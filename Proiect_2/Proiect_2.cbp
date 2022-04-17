@@ -35,11 +35,15 @@
 			<Add option="-fexceptions" />
 		</Compiler>
 		<Unit filename="include/FelPrincipal.h" />
+		<Unit filename="include/MyExceptions.h" />
+		<Unit filename="include/PreparateDePeste.h" />
 		<Unit filename="include/PreparateDePost.h" />
 		<Unit filename="include/PreparateNormale.h" />
 		<Unit filename="include/Produs.h" />
 		<Unit filename="main.cpp" />
 		<Unit filename="src/FelPrincipal.cpp" />
+		<Unit filename="src/MyExceptions.cpp" />
+		<Unit filename="src/PreparateDePeste.cpp" />
 		<Unit filename="src/PreparateDePost.cpp" />
 		<Unit filename="src/PreparateNormale.cpp" />
 		<Unit filename="src/Produs.cpp" />

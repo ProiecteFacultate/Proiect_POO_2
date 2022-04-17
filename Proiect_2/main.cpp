@@ -120,7 +120,17 @@ void comanda5()
 
 void comanda6()
 {
-    cout<<"Codul pentru felurile principale este: "<<FelPrincipal::getCodFelPrincipal()<<endl;
+    try
+    {
+        cout<<"Codul pentru felurile principale este: "<<FelPrincipal::getCodFelPrincipal()<<endl;
+    }
+    catch (int e)
+    {
+        SetColor(12);
+        cout<<endl<<"INT Exception: "<<e<<endl<<endl;
+        SetColor(15);
+    }
+
 }
 
 void comanda7(vector<PreparateNormale> &vPreparateNormale, int &vPreparateNormaleSize)
@@ -186,7 +196,9 @@ void comanda9(vector<PreparateNormale> &vPreparateNormale, int vPreparateNormale
         getline(cin, val);
         MyExceptions::badTypeIntegerException(val);
         MyExceptions::outOfBoundsException(stoi(val), vPreparateNormaleSize, 1);
-        cout<<"Preparatul normal cu numarul "<<stoi(val)<<" este:"<<vPreparateNormale[stoi(val)]<<endl;
+        cout<<"Preparatul normal cu numarul "<<stoi(val)<<" este:"<<endl;
+        vPreparateNormale[stoi(val)].afiseazaProdus();
+        cout<<endl;
     }
     catch(MyExceptions e)
     {
@@ -275,39 +287,25 @@ int main()
     }
 
     cout<<endl<<"Proces incheiat!"<<endl<<endl;
+    cout<<endl<<"DIVERSE FUNCTII: "<<endl<<endl;
 
-    /*FelPrincipal::setCodFelPrincipal(0);
-    try {
-          cout<<FelPrincipal::getCodFelPrincipal()<<endl;
-    }
-    catch(int e) {
-        cout<<"EXCEPTION: "<<e;*/
+    FelPrincipal f1;
+    PreparateNormale pn1;
+    PreparateDePost ppost1;
+    PreparateDePeste ppeste1;
 
+    f1.afiseazaTipulProdusului();
+    pn1.afiseazaTipulProdusului();
+    ppost1.afiseazaTipulProdusului();
+    ppeste1.afiseazaTipulProdusului();
 
-    //Produs::afiseazaTipulProdusului();
-    //FelPrincipal::afiseazaTipulProdusului();*/
+    Produs *p1 = new PreparateDePeste("Peste auriu", "TRUE", "Garnitura", 3, "FALSE", "FALSE", "FALSE", "Peste prajit", 65, 400, 3, 9, 2022);
+    p1->afiseazaProdus();
 
+    Produs *p2 = new PreparateDePost("TRUE", "TRUE", "FALSE", "Paine", 2, 200, 24, 4, 2022);
+    p2->afiseazaProdus();
 
-    /*Produs *p1 = new FelPrincipal("TRUE", "FALSE", "paine", 5, 34, 324, 43, 34);
-    p1->afiseazaProdus();*/
-
-    /*FelPrincipal f1(5);
-    cin>>f1;
-    cout<<f1;*/
-
-    /*PreparateDePost prep1;
-    cin>>prep1;
-    cout<<prep1;*/
-
-    /*Produs *p1 = new PreparateDePost("TRUE", "TRUE", "FALSE", "paine", 5, 34, 324, 43, 34);
-    p1->afiseazaProdus();*/
-
-    /*Produs *p3 = new PreparateNormale("Garnitura", 3, "Friptura de pui", 35, 500, 2, 9, 2022);
-    p3->afiseazaProdus();*/
-
-    /*PreparateNormale pn1;
-    cin>>pn1;
-    cout<<pn1;*/
+    ppost1.esteProdusVegan();
 
 
     return 0;
